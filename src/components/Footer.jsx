@@ -15,15 +15,19 @@ export default function Footer() {
         height="912"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
       />
-      <div aria-hidden className="absolute inset-0 -z-10 bg-parchment/55" />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-parchment/70" />
       <div aria-hidden className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-royal-deep to-transparent" />
       <Reveal className="px-6">
-        <p className="font-display text-3xl tracking-[0.16em] text-royal uppercase">
-          {couple.groomShort} <span className="text-gold">&amp;</span> {couple.brideShort}
+        <p className="font-display text-[clamp(1.5rem,7.5vw,1.875rem)] tracking-[0.12em] whitespace-nowrap text-royal uppercase">
+          {couple.groomShort} <span className="text-[oklch(56%_0.11_80)]">&amp;</span> {couple.brideShort}
         </p>
         <div className="gold-rule mx-auto mt-5 w-24" />
         <p className="mt-6 text-sm text-ink/80">{footer.families}</p>
-        <p className="mt-2 font-display text-lg tracking-[0.12em] text-gold">{couple.hashtag}</p>
+        <div className="mx-auto mt-6 flex items-center justify-center gap-3">
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-gold" />
+          <p className="font-display text-2xl font-semibold tracking-[0.18em] text-royal-deep">{couple.hashtag}</p>
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-gold" />
+        </div>
       </Reveal>
 
       <a
