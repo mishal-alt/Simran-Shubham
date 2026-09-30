@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { invite } from '../data/invite'
 import { useGateOpened } from './Gate'
+import GaneshaSeal from './GaneshaSeal'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -25,6 +26,18 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-royal-deep/25 via-transparent via-40% to-parchment" />
       </motion.div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-80 bg-gradient-to-t from-parchment via-parchment/95 via-60% to-transparent" />
+
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={go ? { opacity: 1, y: 0 } : false}
+        transition={{ duration: 1.1, delay: 0.1 }}
+        className="relative z-20 flex flex-col items-center pt-7"
+      >
+        <GaneshaSeal className="size-16" />
+        <p className="mt-2 rounded-full bg-parchment/75 px-4 py-0.5 font-display text-base tracking-[0.14em] text-royal backdrop-blur-[2px]">
+          ॥ Shree Ganesha Namah ॥
+        </p>
+      </motion.div>
 
       <motion.div style={{ y: textY }} className="relative z-20 mt-auto w-full px-6 pt-24 pb-8 text-center">
         <motion.p

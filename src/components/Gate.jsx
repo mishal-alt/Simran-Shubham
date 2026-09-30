@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { invite } from '../data/invite'
+import GaneshaSeal from './GaneshaSeal'
 
 const GateContext = createContext(false)
 export const useGateOpened = () => useContext(GateContext)
@@ -75,16 +76,25 @@ function GatePanels({ opened, onOpen }) {
         transition={{ duration: 0.9, ease: 'easeOut' }}
         className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center"
       >
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="flex flex-col items-center"
+        >
+          <GaneshaSeal className="size-20" />
+          <p className="mt-3 font-display text-lg tracking-[0.14em] text-gold">॥ Shree Ganesha Namah ॥</p>
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-[0.62rem] tracking-[0.45em] text-gold uppercase"
+          className="mt-7 text-[0.62rem] tracking-[0.45em] text-gold uppercase"
         >
           {inv.kicker}
         </motion.p>
 
-        <div className="relative mt-8 flex h-40 w-40 items-center justify-center">
+        <div className="relative mt-6 flex h-40 w-40 items-center justify-center">
           <motion.span
             animate={{ rotate: 360 }}
             transition={{ duration: 46, repeat: Infinity, ease: 'linear' }}
