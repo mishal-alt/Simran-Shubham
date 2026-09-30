@@ -7,31 +7,33 @@ import GaneshaSeal from './GaneshaSeal'
 export default function Hero() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const artY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-8%'])
+  const artY = useTransform(scrollYProgress, [0, 1], ['0%', '5%'])
   const cueOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
   const { couple, invite: inv, event, venue } = invite
   const go = useGateOpened()
 
   return (
-    <section ref={ref} className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden bg-mist">
-      <motion.div style={{ y: artY }} className="absolute inset-x-0 -top-10 bottom-0">
+    <section ref={ref} className="relative flex min-h-[100svh] flex-col items-center overflow-hidden bg-mist">
+      {/* the arch + couple picture fills the top of the screen; melts into the page colour at the bottom
+          (and at the sides on wide screens) */}
+      <motion.div style={{ y: artY }} className="relative z-10 h-[62svh] min-h-[28rem] w-full max-w-[34rem]">
         <img
-          src="/assets/hero-arch.jpg"
-          alt="Illustrated golden arch with a bride and groom surrounded by lotus flowers"
-          width="1024"
-          height="1536"
-          className="h-full w-full object-cover object-top"
+          src="/assets/hero-couple.jpg"
+          alt="Shubham and Simran smiling together beneath a golden arch of flowers"
+          width="1200"
+          height="1200"
+          className="block h-full w-full object-cover object-top [mask-image:linear-gradient(to_bottom,black_72%,transparent)]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-royal-deep/25 via-transparent via-40% to-mist" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 hidden w-[14%] bg-gradient-to-r from-mist to-transparent md:block" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 hidden w-[14%] bg-gradient-to-l from-mist to-transparent md:block" />
       </motion.div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-80 bg-gradient-to-t from-mist via-mist/95 via-60% to-transparent" />
 
+      {/* Ganesha seal + blessing, laid over the top of the arch */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
         animate={go ? { opacity: 1, y: 0 } : false}
         transition={{ duration: 1.1, delay: 0.1 }}
-        className="relative z-20 flex flex-col items-center pt-7"
+        className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-5"
       >
         <GaneshaSeal className="size-16" />
         <p className="mt-2 rounded-full bg-parchment/75 px-4 py-0.5 font-display text-base tracking-[0.14em] text-royal backdrop-blur-[2px]">
@@ -39,7 +41,7 @@ export default function Hero() {
         </p>
       </motion.div>
 
-      <motion.div style={{ y: textY }} className="relative z-20 mt-auto w-full px-6 pt-24 pb-8 text-center">
+      <div className="relative z-20 -mt-9 w-full px-6 pb-4 text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={go ? { opacity: 1, y: 0 } : false}
@@ -57,9 +59,7 @@ export default function Hero() {
           <span className="bg-gradient-to-b from-royal via-royal-deep to-royal bg-clip-text text-transparent">
             {couple.groomShort}
           </span>
-          <span className="font-script text-[1.25em] font-normal text-gold drop-shadow-[0_1px_1px_rgb(31_58_147/0.25)]">
-            &amp;
-          </span>
+          <span className="font-script text-[1.25em] font-normal text-[oklch(58%_0.11_80)]">&amp;</span>
           <span className="bg-gradient-to-b from-royal via-royal-deep to-royal bg-clip-text text-transparent">
             {couple.brideShort}
           </span>
@@ -82,7 +82,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={go ? { opacity: 1 } : false}
           transition={{ duration: 1, delay: 1.15 }}
-          className="mt-3 font-display text-3xl tracking-[0.18em] text-gold"
+          className="mt-3 font-display text-3xl tracking-[0.18em] text-[oklch(58%_0.11_80)]"
         >
           {event.dateLabel}
         </motion.p>
@@ -94,9 +94,9 @@ export default function Hero() {
         >
           {venue.name}
         </motion.p>
-      </motion.div>
+      </div>
 
-      <motion.div style={{ opacity: cueOpacity }} className="relative z-20 pb-6 text-center">
+      <motion.div style={{ opacity: cueOpacity }} className="relative z-20 mt-auto pb-6 text-center">
         <span className="text-[0.6rem] tracking-[0.3em] text-ink/60 uppercase">scroll</span>
         <motion.div
           animate={{ scaleY: [0.2, 1, 0.2] }}

@@ -2,3 +2,5 @@ node_modules
 dist
 .DS_Store
 *.log
+public/Pasted*.tiff
+public/assets/db5d51b4-*.png

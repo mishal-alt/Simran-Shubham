@@ -24,9 +24,9 @@ export default function Story() {
                         alt={s.title}
                         style={{ objectPosition: s.position }}
                         loading="lazy"
-                        width="1024"
-                        height="1024"
-                        className="h-48 w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-105 sm:h-56"
+                        width="1000"
+                        height="1200"
+                        className="h-72 w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-105 sm:h-80"
                       />
                     </div>
                   </div>
