@@ -9,6 +9,7 @@ import EventCard from './components/EventCard'
 import Venue from './components/Venue'
 import Blessing from './components/Blessing'
 import Rsvp from './components/Rsvp'
+import MusicButton from './components/MusicButton'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <main className="relative bg-parchment">
         <ScrollProgress />
         <PetalRain />
+        <MusicButton />
         <Hero />
         <Countdown />
         <Story />

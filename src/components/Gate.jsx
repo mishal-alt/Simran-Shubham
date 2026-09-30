@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { invite } from '../data/invite'
 import GaneshaSeal from './GaneshaSeal'
+import { music } from '../lib/music'
 
 const GateContext = createContext(false)
 export const useGateOpened = () => useContext(GateContext)
@@ -28,7 +29,10 @@ export default function Gate({ children }) {
   return (
     <GateContext.Provider value={opened}>
       {children}
-      <AnimatePresence>{!gone && <GatePanels opened={opened} onOpen={() => setOpened(true)} />}</AnimatePresence>
+      <AnimatePresence>{!gone && <GatePanels opened={opened} onOpen={() => {
+          setOpened(true)
+          music.play() // must run inside the click so the browser allows audio
+        }} />}</AnimatePresence>
     </GateContext.Provider>
   )
 }
