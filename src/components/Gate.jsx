@@ -121,9 +121,9 @@ function GatePanels({ opened, onOpen }) {
             transition={{ duration: 1.4, delay: 0.5 }}
             className="relative font-display text-4xl tracking-[0.08em] text-parchment"
           >
-            {couple.brideShort[0]}
-            <span className="mx-1 text-gold">&amp;</span>
             {couple.groomShort[0]}
+            <span className="mx-1 text-gold">&amp;</span>
+            {couple.brideShort[0]}
           </motion.span>
         </div>
 
@@ -133,7 +133,7 @@ function GatePanels({ opened, onOpen }) {
           transition={{ duration: 1.5, delay: 0.6, ease }}
           className="mt-9 text-lg font-light text-parchment uppercase sm:text-xl"
         >
-          {couple.brideShort} &amp; {couple.groomShort}
+          {couple.groomShort} &amp; {couple.brideShort}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}

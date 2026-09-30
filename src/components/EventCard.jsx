@@ -19,9 +19,8 @@ function calendarUrl() {
 
 export default function EventCard() {
   return (
-    <section className="relative overflow-hidden px-5 py-20">
-      <div aria-hidden className="jaali absolute inset-0 opacity-[0.07] invert" />
-      <div aria-hidden className="absolute inset-0 bg-parchment/70" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-mist-deep to-mist px-5 py-20">
+      <div aria-hidden className="jaali absolute inset-0 opacity-[0.10] invert" />
       <Reveal className="relative mx-auto max-w-md">
         <div className="paper-grain relative rounded-t-[9rem] border border-gold/50 bg-parchment px-7 pt-16 pb-10 text-center shadow-[0_30px_60px_-45px_var(--color-ink)]">
           <div className="pointer-events-none absolute inset-x-3 top-3 bottom-3 rounded-t-[8.4rem] border border-gold/30" />

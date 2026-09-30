@@ -14,7 +14,7 @@ export default function Hero() {
   const go = useGateOpened()
 
   return (
-    <section ref={ref} className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden bg-parchment">
+    <section ref={ref} className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden bg-mist">
       <motion.div style={{ y: artY }} className="absolute inset-x-0 -top-10 bottom-0">
         <img
           src="/assets/hero-arch.jpg"
@@ -23,9 +23,9 @@ export default function Hero() {
           height="1536"
           className="h-full w-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-royal-deep/25 via-transparent via-40% to-parchment" />
+        <div className="absolute inset-0 bg-gradient-to-b from-royal-deep/25 via-transparent via-40% to-mist" />
       </motion.div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-80 bg-gradient-to-t from-parchment via-parchment/95 via-60% to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-80 bg-gradient-to-t from-mist via-mist/95 via-60% to-transparent" />
 
       <motion.div
         initial={{ opacity: 0, y: -12 }}
@@ -55,13 +55,13 @@ export default function Hero() {
           className="mx-auto mt-3 flex items-baseline justify-center gap-[0.18em] font-display text-[clamp(2rem,10.5vw,4rem)] leading-none font-light whitespace-nowrap"
         >
           <span className="bg-gradient-to-b from-royal via-royal-deep to-royal bg-clip-text text-transparent">
-            {couple.brideShort}
+            {couple.groomShort}
           </span>
           <span className="font-script text-[1.25em] font-normal text-gold drop-shadow-[0_1px_1px_rgb(31_58_147/0.25)]">
             &amp;
           </span>
           <span className="bg-gradient-to-b from-royal via-royal-deep to-royal bg-clip-text text-transparent">
-            {couple.groomShort}
+            {couple.brideShort}
           </span>
         </motion.h1>
         <motion.div

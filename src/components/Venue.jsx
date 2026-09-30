@@ -6,7 +6,7 @@ const { venue } = invite
 
 export default function Venue() {
   return (
-    <section className="px-5 py-16">
+    <section className="bg-mist px-5 py-16">
       <Reveal className="mx-auto max-w-lg text-center">
         <h2 className="font-display text-3xl tracking-[0.14em] text-royal uppercase">The Venue</h2>
         <div className="gold-rule mx-auto mt-4 w-24" />

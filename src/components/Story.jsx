@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 
 export default function Story() {
   return (
-    <section className="relative px-5 py-16">
+    <section className="relative bg-mist px-5 py-16">
       <Reveal className="text-center">
         <h2 className="font-display text-3xl tracking-[0.14em] text-royal uppercase">Our Story</h2>
         <div className="gold-rule mx-auto mt-4 w-24" />
@@ -22,6 +22,7 @@ export default function Story() {
                       <img
                         src={s.image}
                         alt={s.title}
+                        style={{ objectPosition: s.position }}
                         loading="lazy"
                         width="1024"
                         height="1024"

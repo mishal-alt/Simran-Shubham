@@ -5,7 +5,7 @@ export const invite = {
     brideShort: 'Simran',
     groom: 'Shubham Vishwakarma',
     groomShort: 'Shubham',
-    hashtag: '#SimranAndShubham',
+    hashtag: '#Shubhran',
   },
   invite: {
     kicker: 'Together with their families',
@@ -15,21 +15,21 @@ export const invite = {
     groom: {
       label: 'The Groom',
       name: 'Shubham Vishwakarma',
-      parents: 'Son of Mr. Srikanth Vishwakarma & Mrs. Gyanthi Vishwakarma',
+      parents: 'S/O Mr. Srikanth Vishwakarma & Mrs. Gyanthi Vishwakarma',
     },
     bride: {
       label: 'The Bride',
       name: 'Simran Vishwakarma',
-      parents: 'Daughter of Mr. Jayprakash Vishwakarma & Mrs. Savitha Vishwakarma',
+      parents: 'D/O Mr. Jayprakash Vishwakarma & Mrs. Savitha Vishwakarma',
     },
   },
   event: {
-    title: 'The Engagement of Simran & Shubham',
+    title: 'The Engagement of Shubham & Simran',
     startsAt: '2026-10-24T17:00:00+05:30',
     endsAt: '2026-10-24T21:00:00+05:30', // assumed; adjust if needed
     dateLabel: '24 . 10 . 2026',
     dayLabel: 'Saturday',
-    timeLabel: '5:00 in the evening onwards',
+    timeLabel: '5 PM onwards',
     dressCode: 'Traditional / Festive Attire',
     note: 'Dinner to follow',
   },
@@ -39,24 +39,28 @@ export const invite = {
     url: 'https://maps.app.goo.gl/tvtDbFo5Ltpj7oRh6',
   },
   // Placeholder story copy (no dates invented). Edit freely.
+  // `position` picks which part of the painting shows inside the arch frame.
   story: [
     {
       label: 'Chapter One',
       title: 'The First Meeting',
       text: 'A warm introduction, shared smiles, and a conversation that effortlessly turned into something meaningful.',
       image: '/assets/story-2.jpg',
+      position: '50% 40%',
     },
     {
       label: 'Chapter Two',
       title: 'Growing Together',
       text: 'Cherished memories, mutual understanding, and two souls discovering their perfect match.',
-      image: '/assets/story-3.jpg',
+      image: '/assets/story-1.jpg',
+      position: '50% 55%',
     },
     {
       label: 'Chapter Three',
       title: 'The Engagement',
       text: 'Surrounded by our loved ones, we celebrate this joyous milestone and begin our journey together.',
-      image: '/assets/story-1.jpg',
+      image: '/assets/hero-arch.jpg',
+      position: '50% 57%',
     },
   ],
   blessing: {
@@ -66,9 +70,5 @@ export const invite = {
   },
   footer: {
     families: 'With love & warm wishes from the Families',
-  },
-  // RSVP replies open WhatsApp to this number (country code + number, no +).
-  rsvp: {
-    whatsapp: '919380188438',
   },
 }

@@ -9,6 +9,8 @@
   --color-royal-soft: oklch(70% 0.08 260);
   --color-gold: oklch(72% 0.092 85);
   --color-gold-soft: oklch(84% 0.06 88);
+  --color-mist: oklch(94% 0.03 255);
+  --color-mist-deep: oklch(88% 0.055 258);
   --color-rose: oklch(74% 0.088 8);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -22,7 +24,7 @@
   }
   body {
     margin: 0;
-    background: var(--color-parchment);
+    background: var(--color-mist);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
