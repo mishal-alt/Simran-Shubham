@@ -1,4 +1,3 @@
-import { Instagram } from 'lucide-react'
 import { invite } from '../data/invite'
 import Reveal from './Reveal'
 
@@ -29,20 +28,6 @@ export default function Footer() {
           <span className="h-px w-10 bg-gradient-to-l from-transparent to-gold" />
         </div>
       </Reveal>
-
-      <a
-        href="https://www.instagram.com/zetron.tech?stkn=MWkybDJscm41em0zMg%3D%3D&utm_source=qr"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Zetron Tech on Instagram"
-        className="group mx-auto mt-14 flex w-fit items-center gap-2 text-[0.58rem] tracking-[0.3em] text-ink/55 uppercase transition-colors hover:text-royal"
-      >
-        <span className="h-px w-6 bg-gold/60" />
-        <span>Crafted by</span>
-        <Instagram className="size-3.5 text-gold transition-transform group-hover:scale-110" aria-hidden />
-        <span className="font-medium tracking-[0.22em]">zetron.tech</span>
-        <span className="h-px w-6 bg-gold/60" />
-      </a>
     </footer>
   )
 }
